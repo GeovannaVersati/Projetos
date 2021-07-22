@@ -1,0 +1,38 @@
+h1{
+    width:900px;
+    margin:center;
+    padding:0 2%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2{
+    width: 900px;
+    margin:center;
+    padding:0 2%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+ 
+
+
+.produto-individual{
+    width: 33.3%;
+    padding:0 20px;
+
+}
+
+#produtos{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display:flex;  
+
+}
+
+#carrinho{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display:block;
+    
+}

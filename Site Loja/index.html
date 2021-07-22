@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="home.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja Virtual</title>
+   <h1>Expelliarmus!<br>A melhor loja virtual de Filmes de 2021.</h1>
+         <div class="top-bar">
+          <p> VITRINE DE FILMES:
+          </p>
+        </div>
+</head>
+
+<body>
+        <h2>Exibição de Filmes:</h2>
+        <div id="produtos">
+               
+        </div>
+        <h2>Carrinho:</h2>
+        <div id="carrinho">
+        </div>
+        <script>
+        const items=[
+                {
+                  id:0,
+                  nome:'Fight club',
+                  img:'iconfilme.jpg',    
+                  quantidade:0
+                },
+                
+                {
+                  id:1,
+                  nome:'American Beauty',
+                  img:'iconfilme.jpg',   
+                  quantidade:0
+                },
+                
+                {
+                  id:2,
+                  nome:'American Psycho',
+                  img:'iconfilme.jpg',    
+                  quantidade:0
+                },
+
+                {
+                  id:3,
+                  nome:'Donnie Darko',
+                  img:'iconfilme.jpg',    
+                  quantidade:0
+                },
+
+                {
+                  id:4,
+                  nome:'The breakfast Club',
+                  img:'iconfilme.jpg' ,   
+                  quantidade:0
+                },
+
+                {
+                  id:5,
+                  nome:'The Cruella',
+                  img:'iconfilme.jpg',    
+                  quantidade:0
+                },
+
+                {
+                  id:6,
+                  nome:'Matrixx',
+                  img:'iconfilme.jpg' ,   
+                  quantidade:0
+                },
+
+                {
+                  id:7,
+                  nome:'Ex Machina',
+                  img:'iconfilme.jpg',    
+                  quantidade:0
+                },
+
+                {
+                  id:8,
+                  nome:'Pride and Prejudice',
+                  img:'iconfilme.jpg',    
+                  quantidade:0
+                },
+
+
+                {
+                  id:9,
+                  nome:'A Clockwork Orange',
+                  img:'iconfilme.jpg',    
+                  quantidade:0
+                },
+           ] 
+           
+                inicializarLoja =() => {
+                   var containerProdutos =document.getElementById('produtos');
+                   items.map((val)=>{
+                           containerProdutos.innerHTML+= `
+
+                           <div class="produto-individual">
+                                <img src="`+val.img+ `"/>
+                                <p> `+val.nome+`</p>
+                                <a key="`+val.id+`" href="#">Adicionar produtos ao carrinho!</a>
+
+                         </div>
+
+
+                         `;
+
+
+                   })
+                    }
+                inicializarLoja();
+
+
+                atualizarCarrinho= () => {
+                  var containerCarrinho =document.getElementById('carrinho');
+                  containerCarrinho.innerHTML="";
+                   items.map((val)=>{
+                    if(val.quantidade >0){
+                           containerCarrinho.innerHTML+= `
+                         
+                          <p>`+val.nome+` | quantidade:`+val.quantidade+`</p>
+                          <hr>
+
+
+                         `;
+
+
+                    }})
+
+
+                }
+
+                var links = document.getElementsByTagName('a');
+                for(var i=0; i<links.length;i++){
+                        links[i].addEventListener("click", function(){
+                        let key= this.getAttribute('key');
+                        items[key].quantidade++;
+                        atualizarCarrinho();
+                        return false;
+
+                        })
+
+
+
+                }
+        
+        </script>
+ <br>
+</body>
+</html>
